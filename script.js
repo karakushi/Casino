@@ -94,3 +94,35 @@ function calculateWinnings(combination) {
             return 0;
     }
 }
+const addTokensButton = document.getElementById("addTokensButton");
+addTokensButton.addEventListener("click", addTokens);
+
+function addTokens() {
+  let tokens = parseFloat(localStorage.getItem("tokens")) || 0;
+  const addedTokens = 10; 
+  tokens += addedTokens;
+  localStorage.setItem("tokens", tokens);
+  tokensElement.textContent = `Tokens: ${tokens.toFixed(2)}`;
+}
+const spinButton = document.getElementById('spinButton');
+spinButton.addEventListener('click', spin);
+// Observer Pattern
+Observer.subscribe(function(data) {
+    console.log("DOM is ready!");
+  });
+  
+  // Module Pattern
+  const AnotherModule = (function() {
+    let privateVariable = "Hello from Another Module";
+    function privateMethod() {
+      console.log(privateVariable);
+    }
+    return {
+      publicMethod: function() {
+        privateMethod();
+      }
+    };
+  })();
+  
+  // Use Module Pattern to initialize another module
+  AnotherModule.publicMethod();
