@@ -32,7 +32,7 @@ submitAmountButton.addEventListener('click', () => {
     const chfAmount = parseFloat(chfAmountInput.value);
     if (isNaN(chfAmount) || chfAmount < 0) {
         alert('Please enter a valid amount.');
-    } else {
+     } else {
         const tokens = chfAmount * 0.8;
         localStorage.setItem('tokens', tokens);
         window.location.href = 'index.html';
